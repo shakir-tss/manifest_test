@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <remote name="local_git" fetch="ssh://git@github.com/shakir-tss"/>
+    <remote name="local_git" fetch="ssh://git@github.com/thinkseedsystems"/>
 
     <project name="cp_mfid" path="cp_mfid" remote="local_git" revision="main" upstream="main"/>
     <project name="cp_iap2-service" path="cp_iap2-service" remote="local_git" revision="main" upstream="main"/>
