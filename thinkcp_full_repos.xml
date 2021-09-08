@@ -1,0 +1,35 @@
+<!-- ?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="local_git" fetch="ssh://git@github.com/shakir-tss"/>
+
+    <project name="cp_mfid" name="cp_mfid" remote="local_git" />
+    <project name="cp_iap2-service" path="cp_iap2-service" remote="local_git" upstream="main"/>
+    <project name="cp_iap2-test-connection-handler" path="cp_iap2-test-connection-handler" remote="local_git" upstream="main"/>
+    <project name="cp_iap2-testapp" path="cp_iap2-testapp" remote="local_git" upstream="main"/>
+    <project name="cp_rui" path="cp_rui" remote="local_git" upstream="main"/>
+    <project name="cp_docs" path="cp_docs" remote="local_git" upstream="main"/>
+    <project name="cp_mfi-downloads" path="cp_mfi-downloads" remote="local_git" upstream="main"/>
+    <project name="cp_carplay" path="cp_carplay" remote="local_git" upstream="main"/>
+</manifest-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com"
+           review="https://android-review.googlesource.com/" />
+  <default revision="refs/tags/android-11.0.0_r38"
+           remote="aosp"
+           sync-c="true"
+           sync-j="12" />
+
+  <project path="build/make" name="platform/build" groups="pdk" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+</manifest>
